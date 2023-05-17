@@ -1,0 +1,37 @@
+---
+export interface Props {
+	icon: string;
+	number: string;
+	text: string;
+}
+
+const { icon, text, number } = Astro.props;
+---
+
+<section class='card-icon'>
+	<img src=`/images/${icon}` alt='Icon in summary cards' class='icon-summary' />
+	<h2>{number}</h2>
+	<p>{text}</p>
+</section>
+
+<style>
+	img {
+		width: 50px;
+	}
+
+	h2 {
+		font-size: 86px;
+	}
+
+	p {
+		text-align: center;
+		font-size: 20px;
+		color: #b1b1b1;
+	}
+
+	@media (max-width: 768px) {
+		.card-icon{
+			text-align: center;
+		}
+
+</style>

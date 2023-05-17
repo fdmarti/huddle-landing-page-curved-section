@@ -1,0 +1,54 @@
+---
+import ContactInformation from './ContactInformation.astro';
+import Newsletter from './Newsletter.astro';
+import SocialMedia from './SocialMedia.astro';
+---
+
+<footer>
+	<div class='bg-dark-cyan'></div>
+	<section class='footer-section'>
+		<ContactInformation />
+		<Newsletter />
+	</section>
+	<SocialMedia />
+</footer>
+<style>
+	.footer-section {
+		display: flex;
+		justify-content: space-between;
+		position: relative;
+		margin-top: 200px;
+		padding: 0 10px;
+	}
+
+	.bg-dark-cyan {
+		width: 100%;
+		height: 460px;
+		background-color: var(--darkCyan);
+		position: absolute;
+		left: 0;
+		z-index: -1;
+	}
+
+	.bg-dark-cyan::before {
+		content: '';
+		background: no-repeat center/cover url('/images/bg-footer-top-desktop.svg');
+
+		width: 100%;
+		height: 230px;
+		position: absolute;
+		top: -220px;
+	}
+
+	@media (max-width: 992px) {
+		.footer-section {
+			flex-direction: column-reverse;
+			justify-content: center;
+			gap: 1.5rem;
+		}
+
+		.bg-dark-cyan {
+			height: 100%;
+		}
+	}
+</style>

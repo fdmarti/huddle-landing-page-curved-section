@@ -1,0 +1,95 @@
+---
+export interface Props {
+	imageUrl: string;
+	title: string;
+	text: string;
+	positionImage: string;
+	showBordersSection: boolean;
+}
+
+const { imageUrl, title, text, positionImage, showBordersSection } =
+	Astro.props;
+---
+
+<div class='information'>
+	{showBordersSection && <div class='bg-blue' />}
+	<section class=`information-section ${positionImage}`>
+		<section class='text'>
+			<h3>{title}</h3>
+			<p>{text}</p>
+		</section>
+		<section>
+			<img
+				src=`/images/${imageUrl}`
+				alt='image information section'
+				class='image-information'
+			/>
+		</section>
+	</section>
+</div>
+<style>
+	.information-section {
+		display: flex;
+		justify-content: space-between;
+		padding: 20px 0;
+		align-items: center;
+		position: relative;
+		margin: 200px 0;
+
+		gap: 3rem;
+	}
+
+	.bg-blue {
+		width: 100%;
+		max-height: 600px;
+		height: 440px;
+		background-color: var(--paleBlue);
+		position: absolute;
+		left: 0;
+		z-index: -1;
+	}
+
+	.bg-blue::before {
+		content: '';
+		background: no-repeat center/cover
+			url('/images/bg-section-top-desktop-1.svg');
+
+		width: 100%;
+		height: 230px;
+		position: absolute;
+		top: -180px;
+	}
+
+	.bg-blue::after {
+		content: '';
+		background: no-repeat center/cover
+			url('/images/bg-section-bottom-desktop-1.svg');
+
+		width: 100%;
+		height: 190px;
+		position: absolute;
+		bottom: -180px;
+	}
+
+	h3 {
+		font-size: 46px;
+		margin-bottom: 30px;
+	}
+
+	p {
+		font-weight: 600;
+		max-width: 1000px;
+	}
+
+	.left {
+		flex-direction: row-reverse;
+	}
+
+	@media (max-width: 992px) {
+		.information-section {
+			flex-direction: column;
+			text-align: center;
+			margin: 25px 0;
+		}
+	}
+</style>

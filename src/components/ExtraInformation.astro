@@ -1,0 +1,29 @@
+---
+const { text, imageUrl, alt } = Astro.props;
+---
+
+<div class='extra-information'>
+	<img src=`/images/${imageUrl}` alt={alt} />
+	<span class="white-text">{text}</span>
+</div>
+
+<style>
+    .extra-information{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    img{
+        width: 20px;
+    }
+
+    @media (max-width: 992px) {
+		.extra-information {
+			margin: 0 auto;
+			text-align: center;
+		}
+
+	}
+</style>

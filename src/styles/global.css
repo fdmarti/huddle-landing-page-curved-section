@@ -1,0 +1,50 @@
+:root {
+    --pink: #ff52bf;
+    --lightPink: #ff8fd8;
+    --lightRed: #ff4242;
+    --darkCyan: #00252e;
+    --paleBlue: #f5faff;
+}
+
+body {
+    font-family: 'Open sans';
+    scroll-behavior: smooth;
+}
+
+img {
+    width: 100%;
+}
+
+button {
+    font-family: 'Open sans';
+    font-weight: 600;
+    font-size: 14px;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0;
+    padding: 0;
+    color: var(--darkCyan);
+}
+
+main {
+    padding: 0 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 400px;
+}
+
+footer {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.white-text {
+    color: var(--paleBlue);
+}

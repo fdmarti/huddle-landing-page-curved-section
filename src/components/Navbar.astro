@@ -1,0 +1,35 @@
+<nav>
+	<section class='logo'>
+		<img src='/images/logo.svg' alt='huddle logo navbar' />
+	</section>
+	<section class='try-it-free'>
+		<button class='btn-light-pink'> Try it Free</button>
+	</section>
+</nav>
+<style>
+    nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 30px 50px;
+    }
+
+    .btn-light-pink{
+        color: var(--pink);
+        border: 1px solid var(--pink);
+        background-color: transparent;
+        padding: 10px 30px;
+        border-radius: 30px;
+    }
+
+    .btn-light-pink:hover{
+        cursor: pointer;
+        color: var(--lightPink);
+        border: 1px solid var(--lightPink);
+    }
+
+    @media (max-width:768px) {
+        nav{
+            padding: 30px 20px;
+        }
+    }
+</style>

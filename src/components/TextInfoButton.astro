@@ -1,0 +1,57 @@
+---
+
+const { title, text, buttonText } = Astro.props;
+---
+
+<section class='banner-info'>
+	<h1 style={!text && 'padding-bottom:40px'}>{title}</h1>
+	{text && <p>{text}</p>}
+	<button class='btn-pink'>{buttonText}</button>
+</section>
+
+<style>
+	.banner-info {
+		padding: 40px 0;
+		text-align: center;
+	}
+
+	h1 {
+		padding: 20px 0;
+		text-align: center;
+		font-size: 56px;
+		font-weight: 700;
+	}
+
+	p {
+		font-size: 20px;
+		max-width: 600px;
+		margin: 0 auto;
+		padding: 20px 0 40px 0;
+		font-weight: 600;
+	}
+
+	.btn-pink {
+		background-color: var(--pink);
+		color: #fff;
+		border: none;
+		padding: 20px 80px;
+		border-radius: 30px;
+		font-size: 16px;
+		box-shadow: 0 0 25px -12px #000;
+	}
+
+	.btn-pink:hover {
+		cursor: pointer;
+		background-color: var(--lightPink);
+	}
+
+	@media (max-width: 768px) {
+		h1 {
+			font-size: 35px;
+		}
+
+		p{
+			font-size: 18px;
+		}
+	}
+</style>

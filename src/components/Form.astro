@@ -1,0 +1,83 @@
+<form>
+	<input type='email' id='email' placeholder='example@gmail.com' required />
+	<span class='error-msg'>Please check your email</span>
+	<button class='btn-form'>Suscribe</button>
+</form>
+
+<script>
+	import { validateEmail } from '../helpers/validateEmail';
+
+	const buttonSubmit = document.querySelector('.btn-form');
+	buttonSubmit.addEventListener('click', (e) => {
+		e.preventDefault();
+
+		const email = document.getElementById('email') as HTMLInputElement | null;
+		const errorMessageBlock = document.querySelector('.error-msg');
+
+		const result = validateEmail(email.value);
+
+		if (!result) {
+			errorMessageBlock.classList.add('show-error');
+			email.classList.add('border-error');
+		} else {
+			errorMessageBlock.classList.remove('show-error');
+			email.classList.remove('border-error');
+		}
+	});
+</script>
+
+<style>
+	form {
+		display: flex;
+		gap: 2rem;
+		position: relative;
+	}
+	input {
+		padding: 15px 20px;
+		border: none;
+		min-width: 250px;
+		border-radius: 5px;
+		font-size: 16px;
+	}
+
+	input:focus {
+		outline: none;
+	}
+
+	.btn-form {
+		background-color: var(--pink);
+		color: #fff;
+		border: none;
+		padding: 15px 40px;
+		border-radius: 10px;
+		font-size: 16px;
+	}
+
+	.btn-form:hover {
+		cursor: pointer;
+		background-color: var(--lightPink);
+	}
+
+	.error-msg {
+		position: absolute;
+		color: #fc4343;
+		font-weight: 600;
+		bottom: -30px;
+		font-size: 14px;
+		display: none;
+	}
+
+	.border-error {
+		outline: 2px solid #fc4343;
+	}
+
+	.show-error {
+		display: block;
+	}
+
+	@media (max-width: 992px) {
+		form {
+			flex-direction: column;
+		}
+	}
+</style>

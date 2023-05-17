@@ -1,0 +1,28 @@
+---
+import CardSummary from '../components/CardSummary.astro';
+---
+
+<section class='cards-section'>
+	<CardSummary
+		icon='icon-communities.svg'
+		number='1.4k+'
+		text='Communities Formed'
+	/>
+	<CardSummary icon='icon-messages.svg' number='2.7m+' text='Messages Sent' />
+</section>
+<style>
+	.cards-section {
+		display: flex;
+		justify-content: space-around;
+
+		padding: 80px 0;
+	}
+
+	@media (max-width: 768px) {
+		.cards-section {
+			flex-direction: column;
+			margin: 0 auto;
+			gap: 4rem;
+		}
+	}
+</style>

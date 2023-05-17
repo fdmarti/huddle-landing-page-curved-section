@@ -1,0 +1,53 @@
+---
+import ExtraInformation from '../components/ExtraInformation.astro';
+---
+
+<section class='contact-information'>
+	<section class='logo'>
+		<img src='/images/logo-white.svg' alt='huddle logo white footer' />
+	</section>
+	<p class='white-text'>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nulla quam,
+		hendrerit lacinia vestibulum a, ultrices quis sem.
+	</p>
+	<ExtraInformation
+		text='Phone: +1-543-123-4567'
+		imageUrl='icon-phone.svg'
+		alt='icon phone footer'
+	/>
+	<ExtraInformation
+		text='example@huddle.com'
+		imageUrl='icon-email.svg'
+		alt='icon email footer'
+	/>
+</section>
+<section class="social-media">
+
+</section>
+
+<style>
+	.logo img {
+		width: 230px;
+	}
+
+	.contact-information {
+		display: flex;
+		flex-direction: column;
+		max-width: 340px;
+		gap: 1.5rem;
+	}
+
+	p {
+		font-size: 14px;
+        line-height: 28px;
+		font-weight: 600;
+	}
+
+	@media (max-width: 992px) {
+		.contact-information {
+			margin: 0 auto;
+			text-align: center;
+		}
+
+	}
+</style>

@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+import TextInfoButton from '../components/TextInfoButton.astro';
+import Banner from '../components/Banner.astro';
+import CardSection from '../components/CardSection.astro';
+import InformationSection from '../components/InformationSection.astro';
+---
+
+<Layout title='Huddle Home Curved Sections'>
+	<main>
+		<TextInfoButton
+			title='Build The Community Your Fans Will Love'
+			text='Huddle re-imagines the way we build communities. You have a voice, but so does your audience. Create connections with your users as you engage in genuine discussion.'
+			buttonText='Get Started For Free'
+		/>
+		<Banner />
+		<CardSection />
+		<InformationSection />
+		<TextInfoButton
+			title='Ready To Build Your Community?'
+			buttonText='Get Started For Free'
+		/>
+	</main>
+</Layout>
